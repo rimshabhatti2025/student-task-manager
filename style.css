@@ -1,0 +1,264 @@
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===== General Styling ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+
+    /* Soft light background */
+    background: linear-gradient(135deg, #eef4ff, #f8f5ff);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+/* ===== Main Container ===== */
+.container {
+    width: 100%;
+    max-width: 650px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    padding: 40px;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 50px rgba(100, 120, 160, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    animation: fadeIn 0.7s ease;
+}
+
+/* ===== Heading ===== */
+h1 {
+    text-align: center;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    color: #40516f;
+
+    margin-bottom: 30px;
+
+    position: relative;
+}
+
+/* Small line under heading */
+h1::after {
+    content: "";
+
+    display: block;
+
+    width: 70px;
+    height: 4px;
+
+    background: linear-gradient(90deg, #9bb8f5, #c5a8e8);
+
+    border-radius: 10px;
+
+    margin: 10px auto 0;
+}
+
+/* ===== Task Form ===== */
+.task-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+/* ===== Inputs ===== */
+input,
+textarea {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border: 2px solid #e4eaf4;
+
+    border-radius: 12px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 15px;
+
+    color: #4a5872;
+
+    background: #f9fbff;
+
+    outline: none;
+
+    transition: all 0.3s ease;
+}
+
+/* Input focus effect */
+input:focus,
+textarea:focus {
+    border-color: #a8bff0;
+
+    background: #ffffff;
+
+    box-shadow: 0 0 0 4px rgba(168, 191, 240, 0.18);
+
+    transform: translateY(-1px);
+}
+
+/* Placeholder */
+input::placeholder,
+textarea::placeholder {
+    color: #a5afc0;
+}
+
+/* Textarea */
+textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+/* ===== Add Task Button ===== */
+button {
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    /* Light blue-purple button */
+    background: linear-gradient(135deg, #9bb8f5, #bda7df);
+
+    color: #ffffff;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 8px 20px rgba(150, 170, 220, 0.25);
+}
+
+/* Button hover */
+button:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(135deg, #8faef0, #b397d7);
+
+    box-shadow: 0 12px 25px rgba(150, 170, 220, 0.3);
+}
+
+/* Button click */
+button:active {
+    transform: translateY(0);
+}
+
+/* ===== Task List ===== */
+#taskList {
+    margin-top: 30px;
+}
+
+/* ===== Individual Task Card ===== */
+.task {
+    background: #f9fbff;
+
+    border-left: 5px solid #a9bff0;
+
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(100, 120, 160, 0.08);
+
+    transition: all 0.3s ease;
+
+    animation: slideIn 0.4s ease;
+}
+
+.task:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(100, 120, 160, 0.12);
+}
+
+/* Task title */
+.task h3 {
+    color: #4a5872;
+
+    margin-bottom: 7px;
+
+    font-size: 18px;
+}
+
+/* Task description */
+.task p {
+    color: #7d889b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    input,
+    textarea,
+    button {
+        font-size: 14px;
+    }
+}
